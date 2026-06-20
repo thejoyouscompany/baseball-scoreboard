@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Ball Score" />
+  <title>Baseball Scoreboard</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="top-bar">
+      <div>
+        <p class="eyebrow">Offline Baseball Tracker</p>
+        <h1>Scoreboard</h1>
+      </div>
+      <button class="small-button danger" id="resetGame" type="button">Reset</button>
+    </header>
+
+    <section class="inning-card" aria-label="Inning controls">
+      <button class="half-button" id="halfToggle" type="button" aria-label="Toggle top or bottom inning">
+        <span id="halfLabel">Top</span>
+      </button>
+      <div class="inning-number">
+        <button class="arrow-button" data-action="increment" data-field="inning" type="button" aria-label="Increase inning">▲</button>
+        <div>
+          <span class="label">Inning</span>
+          <strong id="inning">1</strong>
+        </div>
+        <button class="arrow-button" data-action="decrement" data-field="inning" type="button" aria-label="Decrease inning">▼</button>
+      </div>
+    </section>
+
+    <section class="score-grid" aria-label="Score controls">
+      <article class="score-card">
+        <span class="label">Away</span>
+        <button class="arrow-button" data-action="increment" data-field="away" type="button" aria-label="Increase away score">▲</button>
+        <strong id="away">0</strong>
+        <button class="arrow-button" data-action="decrement" data-field="away" type="button" aria-label="Decrease away score">▼</button>
+      </article>
+
+      <article class="score-card">
+        <span class="label">Home</span>
+        <button class="arrow-button" data-action="increment" data-field="home" type="button" aria-label="Increase home score">▲</button>
+        <strong id="home">0</strong>
+        <button class="arrow-button" data-action="decrement" data-field="home" type="button" aria-label="Decrease home score">▼</button>
+      </article>
+    </section>
+
+    <section class="count-grid" aria-label="Count controls">
+      <article class="count-card balls">
+        <span class="label">Balls</span>
+        <button class="arrow-button" data-action="increment" data-field="balls" type="button" aria-label="Increase balls">▲</button>
+        <strong id="balls">0</strong>
+        <button class="arrow-button" data-action="decrement" data-field="balls" type="button" aria-label="Decrease balls">▼</button>
+      </article>
+
+      <article class="count-card strikes">
+        <span class="label">Strikes</span>
+        <button class="arrow-button" data-action="increment" data-field="strikes" type="button" aria-label="Increase strikes">▲</button>
+        <strong id="strikes">0</strong>
+        <button class="arrow-button" data-action="decrement" data-field="strikes" type="button" aria-label="Decrease strikes">▼</button>
+      </article>
+
+      <article class="count-card outs">
+        <span class="label">Outs</span>
+        <button class="arrow-button" data-action="increment" data-field="outs" type="button" aria-label="Increase outs">▲</button>
+        <strong id="outs">0</strong>
+        <button class="arrow-button" data-action="decrement" data-field="outs" type="button" aria-label="Decrease outs">▼</button>
+      </article>
+    </section>
+
+    <section class="quick-actions" aria-label="Quick actions">
+      <button id="newBatter" type="button">New batter</button>
+      <button id="addOut" type="button">Add out</button>
+      <button id="nextHalf" type="button">Next half</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
