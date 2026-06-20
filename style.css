@@ -94,9 +94,9 @@ h1 {
 }
 
 .half-button {
-  min-height: 116px;
-  font-size: clamp(2.3rem, 12vw, 4.5rem);
-  background: var(--panel-2);
+  font-size: 1.75rem;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .inning-number {
